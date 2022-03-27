@@ -61,15 +61,15 @@ jobs:
         name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: magnesium-oxide (release)
-          path: target/release/magnesium-oxide
+          name: libchksm.rlib (release)
+          path: target/release/libchksm.rlib
 
       # Create a release on GitHub with the release notes
       - if: ${{ steps.changelog.outputs.skipped == 'false' }}
         name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: target/release/magnesium-oxide
+          artifacts: target/release/libchksm.rlib
           body: ${{ steps.changelog.outputs.clean_changelog }}
           draft: false
           name: ${{ steps.changelog.outputs.tag }}
