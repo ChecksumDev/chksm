@@ -1,0 +1,39 @@
+[package]
+name = "chksm"
+description = "A multipurpose rust library for use in my projects"
+repository = "https://github.com/ChecksumDev/chksm"
+homepage = "https://github.com/ChecksumDev/chksm"
+license = "GPL-3.0"
+categories = [
+    "cryptography",
+    "filesystem",
+    "caching",
+    "asynchronous",
+    "database"
+]
+version = "0.1.0"
+edition = "2021"
+
+[profile.dev]
+opt-level = 0
+lto = false
+debug = true
+runtimes = "build"
+codegen-units = 1
+debug-assertions = true
+overflow-checks = true
+panic = "abort"
+
+
+[profile.release]
+opt-level = 3
+lto = true
+debug = false
+rpath = false
+
+[lib]
+name = "chksm"
+crate-type = ["lib"]
+
+[dependencies]
+tokio = "1"
