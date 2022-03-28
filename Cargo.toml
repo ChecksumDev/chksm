@@ -37,7 +37,10 @@ name = "chksm"
 crate-type = ["lib"]
 
 [features]
+default = ["net", "crypto"]
 logging = ["chrono"]
+net = []
+crypto = []
 
 [dependencies]
 tokio = { version = "1", features = ["full"] }
