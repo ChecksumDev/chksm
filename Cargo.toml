@@ -3,7 +3,7 @@ name = "chksm"
 description = "A multipurpose rust library for use in my projects"
 repository = "https://github.com/ChecksumDev/chksm"
 homepage = "https://github.com/ChecksumDev/chksm"
-license = "GPL-3.0"
+license-file = "LICENSE"
 categories = [
     "cryptography",
     "filesystem",
@@ -11,6 +11,8 @@ categories = [
     "asynchronous",
     "database"
 ]
+keywords = ["checksum"]
+readme = "README.md"
 version = "0.2.0"
 edition = "2021"
 
