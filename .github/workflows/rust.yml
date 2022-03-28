@@ -56,6 +56,11 @@ jobs:
           args: "--release"
           command: test
 
+      # Publish to crates.io
+      - if: ${{ steps.changelog.outputs.skipped == 'false' }}
+        name: Publish to crates.io
+        run: cargo publish --token ${{ secrets.CRATES_TOKEN }}
+
       # Deploy the release artifacts to GitHub
       - if: ${{ steps.changelog.outputs.skipped == 'false' }}
         name: Upload artifacts

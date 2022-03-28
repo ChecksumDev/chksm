@@ -24,16 +24,19 @@ debug-assertions = true
 overflow-checks = true
 panic = "abort"
 
-
 [profile.release]
-opt-level = 3
 lto = true
+codegen-units = 1
 debug = false
-rpath = false
+opt-level = 3
 
 [lib]
 name = "chksm"
 crate-type = ["lib"]
 
+[features]
+logging = ["chrono"]
+
 [dependencies]
-tokio = "1"
+tokio = { version = "1", features = ["full"] }
+chrono = { version = "0.4", features = ["serde"], optional = true }
