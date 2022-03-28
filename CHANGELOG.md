@@ -1,3 +1,12 @@
+## [0.2.2](https://github.com/ChecksumDev/chksm/compare/v0.2.1...v0.2.2) (2022-03-28)
+
+
+### Bug Fixes
+
+* :bug: Add [features] tag for other modules ([dc7aeae](https://github.com/ChecksumDev/chksm/commit/dc7aeae38b136c04b607d3cb73dff063fdde9c11))
+
+
+
 ## [0.2.1](https://github.com/ChecksumDev/chksm/compare/v0.2.0...v0.2.1) (2022-03-28)
 
 
