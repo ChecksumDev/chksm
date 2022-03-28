@@ -1,3 +1,7 @@
+## [0.2.1](https://github.com/ChecksumDev/chksm/compare/v0.2.0...v0.2.1) (2022-03-28)
+
+
+
 # [0.2.0](https://github.com/ChecksumDev/chksm/compare/v0.1.2...v0.2.0) (2022-03-28)
 
 
