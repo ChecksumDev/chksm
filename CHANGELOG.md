@@ -1,3 +1,12 @@
+## [0.2.3](https://github.com/ChecksumDev/chksm/compare/v0.2.2...v0.2.3) (2022-03-28)
+
+
+### Bug Fixes
+
+* :bug: Build with all features for docs.rs!!! ([33592bc](https://github.com/ChecksumDev/chksm/commit/33592bc97df8f876ddb8a31d69c9fd55c6117136))
+
+
+
 ## [0.2.2](https://github.com/ChecksumDev/chksm/compare/v0.2.1...v0.2.2) (2022-03-28)
 
 
