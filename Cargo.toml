@@ -48,3 +48,4 @@ all-features = true
 [dependencies]
 tokio = { version = "1", features = ["full"] }
 chrono = { version = "0.4", features = ["serde"], optional = true }
+regex = "1"

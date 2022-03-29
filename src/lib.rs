@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 #[cfg(feature = "logging")]
 pub mod logging {
     pub mod structs {
