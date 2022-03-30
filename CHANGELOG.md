@@ -1,3 +1,12 @@
+## [0.3.1](https://github.com/ChecksumDev/chksm/compare/v0.3.0...v0.3.1) (2022-03-30)
+
+
+### Bug Fixes
+
+* :bug: tcp not sending proper data ([c6264b1](https://github.com/ChecksumDev/chksm/commit/c6264b1ed8cf925b1a6e0ecfb79b5de8f876c5f8))
+
+
+
 # [0.3.0](https://github.com/ChecksumDev/chksm/compare/v0.2.4...v0.3.0) (2022-03-29)
 
 
