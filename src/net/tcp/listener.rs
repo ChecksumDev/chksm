@@ -17,9 +17,25 @@ impl std::fmt::Display for StatusCode {
     }
 }
 
+impl StatusCode {
+    /// Drops stream; wrties status code to stream; returns status code
+    pub fn construct(&self, mut stream: TcpStream) -> Self {
+        match *self {
+            StatusCode::Ok => {
+                write!(stream, "{}", StatusCode::Ok).unwrap();
+                StatusCode::Ok
+            }
+            StatusCode::Error => {
+                write!(stream, "{}", StatusCode::Error).unwrap();
+                StatusCode::Error
+            }
+        }
+    }
+}
+
 pub struct Route {
     match_pattern: Regex,
-    route: Arc<dyn Fn(TcpStream) -> StatusCode>,
+    route: Arc<dyn Fn(TcpStream, [u8; 128]) -> StatusCode>,
 }
 
 pub struct Router {
@@ -54,7 +70,8 @@ impl Server {
         self.router.built = true;
     }
 
-    /// unoptimized
+    ///! # unoptimized
+    /// binds to port; listens for connections; accepts connection; filters connection via regex; passes stream to appropriate route; loops
     pub fn run(self) -> ! {
         if !self.router.built {
             panic!("Attempted to run server without first calling construct()");
@@ -66,33 +83,23 @@ impl Server {
                 match stream {
                     Ok(stream) => {
                         let mut stream = stream;
-                        let mut buffer = [0; 128];
-                        stream.read(&mut buffer).unwrap();
-                        let buffer = String::from_utf8_lossy(&buffer);
-                        println!("{}", buffer);
+                        let mut _buffer = [0; 128];
+                        stream.read(&mut _buffer).unwrap();
+                        let buffer = String::from_utf8_lossy(&_buffer);
+
                         for route in self.router.routes.iter() {
                             if route.match_pattern.is_match(&buffer) {
-                                //stream.write(&[1]).unwrap();
+
                                 stream.flush().unwrap();
-                                route.route.clone()(stream).to_string();
+                                route.route.clone()(stream, _buffer).to_string();
                                 break;
                             }
                         }
-                        //stream.write(response.as_bytes()).unwrap();
                     }
                     Err(e) => {
                         println!("Error: {}", e);
                     }
                 }
-
-                // let stream_data = String::from_utf8(stream_data).unwrap();
-                // for route in self.router.routes.iter() {
-                //     if route.match_pattern.is_match(stream_data.as_ref()) {
-                //         drop(stream_data);
-                //         let f = route.route.clone();
-                //         f(stream.unwrap());
-                //     }
-                // }
             }
         }
     }
@@ -115,7 +122,7 @@ impl Router {
 }
 
 impl Route {
-    pub fn new(match_pattern: Regex, route: Arc<dyn Fn(TcpStream) -> StatusCode>) -> Route {
+    pub fn new(match_pattern: Regex, route: Arc<dyn Fn(TcpStream, [u8; 128]) -> StatusCode>) -> Route {
         Route {
             match_pattern,
             route,
@@ -125,18 +132,19 @@ impl Route {
 
 // #[test]
 // fn test_router() {
-//     fn d_route(mut stream: TcpStream) -> StatusCode {
+//     fn d_route(mut stream: TcpStream, _data: [u8; 128]) -> StatusCode {
 //         println!("called d_route");
 //         write!(stream, "d_route").unwrap();
 
 //         stream.flush().unwrap();
 
-//         let mut buf = String::new();
-//         stream.read_to_string(&mut buf).unwrap();
+//         //let mut buf = String::new();
 
-//         println!("{}", buf);
+//         stream.read(&mut [0; 128]).unwrap();
 
-//         StatusCode::Ok
+//         //println!("{}", buf);
+
+//         StatusCode::Ok.construct(stream)
 //     }
 //     let route = Route::new(Regex::new(".*").unwrap(), Arc::new(d_route));
 //     let mut router = Router::new();
@@ -144,4 +152,4 @@ impl Route {
 //     let mut server = Server::new("127.0.0.1", 8080, router, 10);
 //     server.construct();
 //     server.run();
-// }
+//}

@@ -49,3 +49,5 @@ all-features = true
 tokio = { version = "1", features = ["full"] }
 chrono = { version = "0.4", features = ["serde"], optional = true }
 regex = "1"
+syn = "1"
+quote = "1"
