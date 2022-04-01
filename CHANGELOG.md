@@ -1,3 +1,12 @@
+## [0.4.3](https://github.com/ChecksumDev/chksm/compare/v0.4.2...v0.4.3) (2022-04-01)
+
+
+### Bug Fixes
+
+* :ambulance: remove the dam test ([67522c7](https://github.com/ChecksumDev/chksm/commit/67522c7eb505fe0e4cde4bb6a42910bd2a5261e2))
+
+
+
 ## [0.4.2](https://github.com/ChecksumDev/chksm/compare/v0.4.1...v0.4.2) (2022-04-01)
 
 
@@ -66,16 +75,6 @@
 
 
 ## [0.2.1](https://github.com/ChecksumDev/chksm/compare/v0.2.0...v0.2.1) (2022-03-28)
-
-
-
-# [0.2.0](https://github.com/ChecksumDev/chksm/compare/v0.1.2...v0.2.0) (2022-03-28)
-
-
-### Features
-
-* :sparkles: Implement logger module ([4352f9e](https://github.com/ChecksumDev/chksm/commit/4352f9ec3035ec0d68755434a381d1b315354cea))
-* :sparkles: Scope modules to features ([e45da67](https://github.com/ChecksumDev/chksm/commit/e45da6748f7341244c8cf99695c7b558e2a6c821))
 
 
 
