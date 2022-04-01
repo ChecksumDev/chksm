@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/ChecksumDev/chksm/compare/v0.3.1...v0.4.0) (2022-04-01)
+
+
+### Features
+
+* ci forcebuild ([88de5ef](https://github.com/ChecksumDev/chksm/commit/88de5ef902507c8b3357c329d72a6446585c3a35))
+
+
+
 ## [0.3.1](https://github.com/ChecksumDev/chksm/compare/v0.3.0...v0.3.1) (2022-03-30)
 
 
