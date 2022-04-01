@@ -1,3 +1,12 @@
+## [0.4.2](https://github.com/ChecksumDev/chksm/compare/v0.4.1...v0.4.2) (2022-04-01)
+
+
+### Bug Fixes
+
+* :zap: router construction macro ([b94573e](https://github.com/ChecksumDev/chksm/commit/b94573e7dc19147126a5fd43603a6b574c57928c))
+
+
+
 ## [0.4.1](https://github.com/ChecksumDev/chksm/compare/v0.4.0...v0.4.1) (2022-04-01)
 
 
@@ -67,10 +76,6 @@
 
 * :sparkles: Implement logger module ([4352f9e](https://github.com/ChecksumDev/chksm/commit/4352f9ec3035ec0d68755434a381d1b315354cea))
 * :sparkles: Scope modules to features ([e45da67](https://github.com/ChecksumDev/chksm/commit/e45da6748f7341244c8cf99695c7b558e2a6c821))
-
-
-
-## [0.1.2](https://github.com/ChecksumDev/chksm/compare/v0.1.1...v0.1.2) (2022-03-27)
 
 
 
