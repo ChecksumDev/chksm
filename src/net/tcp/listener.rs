@@ -142,27 +142,27 @@ macro_rules! router{
     };
 }
 
-#[test]
-fn test_router() {
-    fn d_route(mut stream: TcpStream, _data: [u8; 128]) -> StatusCode {
-        println!("called d_route");
-        write!(stream, "d_route").unwrap();
+// #[test]
+// fn test_router() {
+//     fn d_route(mut stream: TcpStream, _data: [u8; 128]) -> StatusCode {
+//         println!("called d_route");
+//         write!(stream, "d_route").unwrap();
 
-        stream.flush().unwrap();
+//         stream.flush().unwrap();
 
-        //let mut buf = String::new();
+//         //let mut buf = String::new();
 
-        stream.read(&mut [0; 128]).unwrap();
+//         stream.read(&mut [0; 128]).unwrap();
 
-        //println!("{}", buf);
+//         //println!("{}", buf);
 
-        StatusCode::Ok.construct(stream)
-    }
-    let router = router! {
-        ".*" => d_route
-    };
+//         StatusCode::Ok.construct(stream)
+//     }
+//     let router = router! {
+//         ".*" => d_route
+//     };
 
-    let mut server = Server::new("127.0.0.1", 8080, router, 10);
-    server.construct();
-    server.run();
-}
+//     let mut server = Server::new("127.0.0.1", 8080, router, 10);
+//     server.construct();
+//     server.run();
+// }
