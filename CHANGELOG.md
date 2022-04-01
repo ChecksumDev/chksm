@@ -1,3 +1,12 @@
+## [0.4.4](https://github.com/ChecksumDev/chksm/compare/v0.4.3...v0.4.4) (2022-04-01)
+
+
+### Bug Fixes
+
+* :adhesive_bandage: #[macro_export} ([1ad0b6e](https://github.com/ChecksumDev/chksm/commit/1ad0b6e202ea300383edce089b1ee01da7ad6112))
+
+
+
 ## [0.4.3](https://github.com/ChecksumDev/chksm/compare/v0.4.2...v0.4.3) (2022-04-01)
 
 
@@ -71,10 +80,6 @@
 ### Bug Fixes
 
 * :bug: Add [features] tag for other modules ([dc7aeae](https://github.com/ChecksumDev/chksm/commit/dc7aeae38b136c04b607d3cb73dff063fdde9c11))
-
-
-
-## [0.2.1](https://github.com/ChecksumDev/chksm/compare/v0.2.0...v0.2.1) (2022-03-28)
 
 
 
