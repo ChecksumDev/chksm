@@ -3,7 +3,7 @@ name = "chksm"
 description = "A multipurpose rust library for use in my projects"
 repository = "https://github.com/ChecksumDev/chksm"
 homepage = "https://github.com/ChecksumDev/chksm"
-license = "GNU-GPL-3.0"
+license = "GPL-3.0"
 categories = [
     "cryptography",
     "filesystem",
