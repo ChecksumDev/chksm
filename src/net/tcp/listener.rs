@@ -130,6 +130,7 @@ impl Route {
     }
 }
 
+#[macro_export]
 macro_rules! router{
     { $($match_pattern:expr => $route:expr),+ } => {
         {
